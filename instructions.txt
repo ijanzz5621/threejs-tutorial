@@ -1,0 +1,24 @@
+Tutorial links:
+===============
+Title:
+-----
+Three.js Tutorial For Absolute Beginners
+
+Link:
+-----
+https://www.youtube.com/watch?v=xJAfLdUgdc4&list=PLjcjAqAnHd1EIxV4FSZIiJZvsdrBc1Xho
+
+Stop at: 
+--------
+49:33
+
+install parcel:
+---------------
+
+npm install parcel -g
+
+to run the parcel:
+------------------
+
+parcel ./src/index.html
+
