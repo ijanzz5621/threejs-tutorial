@@ -1,11 +1,15 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'; 
 
 import * as dat from 'dat.gui';
 
 // import images
 import nebula from '../img/nebula.jpg';
 import stars from '../img/stars.jpg';
+
+// import monkey model
+const monkeyUrl = new URL('../assets/monkey.glb', import.meta.url);
 
 //const renderer = new THREE.WebGLRenderer({ antialias: true });
 const renderer = new THREE.WebGLRenderer();
@@ -108,7 +112,7 @@ scene.add(spotLight);
 const spotLightHelper = new THREE.SpotLightHelper(spotLight);
 scene.add(spotLightHelper);
 
-// Add fog
+// // Add fog
 // scene.fog = new THREE.Fog(0xFFFFFF, 0, 200);
 // scene.fog = new THREE.FogExp2(0xFFFFFF, 0.01);
 
@@ -186,6 +190,19 @@ const sphere2Material = new THREE.MeshBasicMaterial({
 const sphere2 = new THREE.Mesh(sphere2Geometry, sphere2Material);
 scene.add(sphere2);
 sphere2.position.set(-5, 10, 10);
+
+// Create instance of GLTF Loader
+const assetLoader = new GLTFLoader();
+// import gltf model
+assetLoader.load(monkeyUrl.href, function(gltf) {
+    const model = gltf.scene;
+    scene.add(model);
+    model.position.set(-12, 4, 10);
+}, 
+undefined,
+function(error) {
+    console.log(error);
+});
 
 // Add top right config meny
 const gui = new dat.GUI();
@@ -278,5 +295,11 @@ function animate(time) {
 
 renderer.setAnimationLoop(animate);
 
+// update view for resize
+window.addEventListener('resize', function() {
+    camera.aspect = window.innerWidth / this.window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight); 
+});
 
 
