@@ -245,6 +245,7 @@ window.addEventListener('mousemove', function(e) {
 });
 
 const rayCaster = new THREE.Raycaster();
+
 const sphereId = sphere.id;
 box3.name = "theBox";
 
