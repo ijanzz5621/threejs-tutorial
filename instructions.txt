@@ -14,36 +14,15 @@ Completed
 
 Title:
 -----
-2. How To Make An Object Rotate Around Another Object In Three.js - Create A Solar System
+GLSL & Shaders Tutorial - Understanding The Syntax And The Idea Behind The Vertex & Fragment Shaders
 
 Link:
 -----
-https://www.youtube.com/watch?v=XXzqSAt3UIw&list=PLjcjAqAnHd1EIxV4FSZIiJZvsdrBc1Xho&index=2
+https://www.youtube.com/watch?v=xZM8UJqN1eY&list=PLjcjAqAnHd1EIxV4FSZIiJZvsdrBc1Xho&index=4
 
 Stop at: 
 --------
-1:00
-
-
-2. Build a Mindblowing 3D Portfolio Website // Three.js Beginner’s Tutorial
-
-Link:
------
-https://www.youtube.com/watch?v=Q7AOvWpIVHU&t=309s
-
-Stop at:
---------
-0:0
-
-3. How To Export 3D Models With Their Animation From Blender And Import Them Into Your Three.js App
-
-Link:
------
-https://www.youtube.com/watch?v=GByT8ActvDk&list=PLjcjAqAnHd1EIxV4FSZIiJZvsdrBc1Xho&index=3
-
-Stop At:
---------
-0:00
+0:15
 
 ============================================================================================================================
 
