@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Tutorial - GLSL & Shader</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #threeDContainer {
+            background-color: #E0E0E0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>ThreeJS Tutorial - Rotating Objects</h1>
+    </div>
+    <div id="threeDContainer">
+    </div>
+    <script id="vertexShader" type="vertex">
+        uniform float u_time;
+        varying vec2 vUv;
+        void main() {
+            vUv = uv;
+            float newX = sin(position.x * u_time) * sin(position.y * u_time);
+            vec3 newPosition = vec3(newX, position.y, position.z);
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+    </script>
+    <script id="fragmentShader" type="fragment">
+        uniform float u_time;
+        uniform vec2 u_resolution;
+        uniform vec2 u_mouse;
+        uniform sampler2D image;
+        varying vec2 vUv;
+        void main() {
+            vec2 st = gl_FragCoord.xy / u_resolution;
+            vec4 texture = texture2D(image, vUv);
+            float effect = abs(sin(texture.x + u_time));
+
+            // gl_FragColor = vec4(0.0, u_mouse.x, u_mouse.y, 1.0);
+            gl_FragColor = vec4(texture.r, texture.g, texture.b, 1.0);
+            //gl_FragColor = vec4(vec3(effect), 1.0);
+        }
+    </script>    
+    <script src="./js/scripts-glsl-shader.js" type="module"></script>
+</body>
+</html>

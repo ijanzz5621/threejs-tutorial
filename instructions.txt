@@ -14,17 +14,24 @@ Completed
 
 Title:
 -----
-GLSL & Shaders Tutorial - Understanding The Syntax And The Idea Behind The Vertex & Fragment Shaders
+Cannon.js Tutorial For Beginners - Add Gravity, Collision, And Other Physics Laws To Your 3D Web App
 
 Link:
 -----
-https://www.youtube.com/watch?v=xZM8UJqN1eY&list=PLjcjAqAnHd1EIxV4FSZIiJZvsdrBc1Xho&index=4
+https://www.youtube.com/watch?v=TPKWohwHrbo&list=PLjcjAqAnHd1EIxV4FSZIiJZvsdrBc1Xho&index=5
 
 Stop at: 
 --------
-0:15
+0:00
 
 ============================================================================================================================
+
+create a project bundler using npm:
+-----------------------------------
+
+npm init -y
+
+
 
 install parcel:
 ---------------
