@@ -26,12 +26,20 @@ Stop at:
 
 ============================================================================================================================
 
+Learn ThreeJS by Building 5 Projects
+
+Link: 
+https://www.youtube.com/watch?v=UMqNHi1GDAE
+
+Stop at: 
+28:00
+
+============================================================================================================================
+
 create a project bundler using npm:
 -----------------------------------
 
 npm init -y
-
-
 
 install parcel:
 ---------------
@@ -42,4 +50,12 @@ to run the parcel:
 ------------------
 
 parcel ./src/index.html
+
+Note: Other than parcel, can use Live Server extension for VS Code 
+(Only can use for ThreeJS Javascript from CDN)
+
+Install Live Server for NPM:
+
+    npm install -g live-Server
+
 
