@@ -1,8 +1,6 @@
 import * as THREE from "three";
 
-import starCircle from '../../assets/textures/stars/circle.png';
-
-export default function getStarfield({ numStars = 500 } = {}) {
+export default function getStarfield({ numStars = 500 } = {}, starCircle) {
   function randomSpherePoint() {
     const radius = Math.random() * 25 + 25;
     const u = Math.random();
@@ -30,7 +28,12 @@ export default function getStarfield({ numStars = 500 } = {}) {
     col = new THREE.Color().setHSL(hue, 0.2, Math.random());
     verts.push(pos.x, pos.y, pos.z);
     colors.push(col.r, col.g, col.b);
+    // colors.push(0, 0, 0);
   }
+
+  // console.log("verts: ", verts);
+  // console.log("colors: ", colors);
+  // console.log("positions: ", positions);
 
   const textureLoader = new THREE.TextureLoader();
 
@@ -40,8 +43,12 @@ export default function getStarfield({ numStars = 500 } = {}) {
   const mat = new THREE.PointsMaterial({
     size: 0.2,
     vertexColors: true,
-    map:textureLoader.load(starCircle),
+    color: 0xFFFFFF,
+    // map:textureLoader.load(starCircle)
   });
   const points = new THREE.Points(geo, mat);
+
+  // console.log(points);
+
   return points;
 }
