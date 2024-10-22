@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate Object Around Another</title>
+    <style>
+        #center {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #rotating {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="center"></div>
+    <div id="rotating"></div>
+
+    <script>
+        const rotatingObj = document.getElementById('rotating');
+        const centerObj = document.getElementById('center');
+
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+        const radius = 100; // Radius of the circular path
+
+        let angle = 0;
+
+        function updatePosition() {
+            // Calculate the new position based on the angle
+            const x = centerX + radius * Math.cos(-angle);
+            const y = centerY + radius * Math.sin(-angle);
+
+            // Set the new position of the rotating object
+            rotatingObj.style.left = `${x}px`;
+            rotatingObj.style.top = `${y}px`;
+
+            // Update the angle for the next frame
+            angle += Math.PI / 360; // Increment angle (45 degrees per update)
+        }
+
+        // Update every second
+        setInterval(updatePosition, 1);
+    </script>
+</body>
+</html>
