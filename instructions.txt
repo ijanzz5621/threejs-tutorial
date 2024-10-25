@@ -58,4 +58,8 @@ Install Live Server for NPM:
 
     npm install -g live-Server
 
+Run using http-server:
+
+    http-server
+
 
