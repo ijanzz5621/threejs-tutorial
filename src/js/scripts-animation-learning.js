@@ -44,8 +44,8 @@ function refresh() {
   }
 
   if (currentAnimationType === "Basic Acceleration") {
-    resetBall()    
-    animation = ballAnimationUpdate();
+    resetBall();    
+    animation = ballAnimationUpdate(animation);
   } 
   else {
     alert("Animation for " + currentAnimationType + " is not available yet");

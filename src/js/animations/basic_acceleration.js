@@ -1,7 +1,7 @@
 
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
-var animation = undefined;
+// var animation = undefined;
 
 const ballRadius = 50;
 const ball = {
@@ -26,7 +26,7 @@ export function resetBall() {
     ball.y = 0 + ballRadius;
 }
 
-export function ballAnimationUpdate() {
+export function ballAnimationUpdate(animation) {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall(ctx); // Draw the ball
@@ -43,10 +43,10 @@ export function ballAnimationUpdate() {
       ball.dy = -ball.dy;
     }
   
-    // Request the next frame
-    // if (animation === undefined) {
+    // // Request the next frame
+    // // if (animation === undefined) {
     animation = requestAnimationFrame(ballAnimationUpdate); 
-    //}
+    // //}
     return animation;
 }
   
