@@ -1,8 +1,9 @@
-import { startAnimation as startBallAnimation } from '../js/animations/basic_acceleration.js';
+import { startAnimation as startBallAnimation, stopAnimation as stopBallAnimation } from '../js/animations/basic_acceleration.js';
 
 const canvas = document.getElementById("animationCanvas");
 const ctx = canvas.getContext("2d");
 var currentAnimationType = "Basic Acceleration";
+let animationId = undefined;
 
 // Events Listener
 window.addEventListener('resize', onResize);
@@ -19,11 +20,10 @@ document.getElementById('animationType').addEventListener('change', function(eve
 
 function start() {
   if (currentAnimationType === "Basic Acceleration") {
-    startBallAnimation();
+    animationId = startBallAnimation();
   } 
   else {
-    // alert("Animation for " + currentAnimationType + " is not available yet");
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    stopBallAnimation();
   }
 }
 

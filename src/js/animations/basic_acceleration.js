@@ -13,13 +13,13 @@ let ball = {
 };
 
 // Set ball to the initial position
-export function resetBallPosition() {
+function resetBallPosition() {
   ball.x = canvas.width / 2;
   ball.y = canvas.height / 2;
 }
 
 // Animate the ball on the canvas
-export function animate() {
+function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // Draw the ball
@@ -43,12 +43,19 @@ export function animate() {
 
   // Request the next frame
   animationId = requestAnimationFrame(animate);
+  return animationId;
 }
   
 export function startAnimation() {
   cancelAnimationFrame(animationId);
   resizeCanvas();
-  animate();
+  animationId = animate();
+  return animationId;
+}
+
+export function stopAnimation() {
+  cancelAnimationFrame(animationId);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 function resizeCanvas() {
