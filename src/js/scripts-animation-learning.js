@@ -2,8 +2,8 @@ import { startAnimation as startBallAnimation, stopAnimation as stopBallAnimatio
 
 const canvas = document.getElementById("animationCanvas");
 const ctx = canvas.getContext("2d");
-var currentAnimationType = "Basic Acceleration";
-let animationId = undefined;
+let currentAnimationType = "Basic Acceleration";
+let prevAnimationType = undefined;
 
 // Events Listener
 window.addEventListener('resize', onResize);
@@ -11,6 +11,7 @@ document.getElementById('animationType').addEventListener('change', function(eve
   const selVal = event.target.value;
 
   if (selVal != currentAnimationType) {
+    prevAnimationType = currentAnimationType;
     currentAnimationType = selVal;
   }
 
@@ -20,10 +21,12 @@ document.getElementById('animationType').addEventListener('change', function(eve
 
 function start() {
   if (currentAnimationType === "Basic Acceleration") {
-    animationId = startBallAnimation();
+    startBallAnimation();
   } 
   else {
-    stopBallAnimation();
+
+    if (prevAnimationType === "Basic Acceleration")
+      stopBallAnimation();
   }
 }
 
