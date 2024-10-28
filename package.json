@@ -17,6 +17,8 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "@cognite/reveal": "^4.19.1",
+    "@cognite/sdk": "^9.16.0",
     "three": "^0.169.0"
   }
 }

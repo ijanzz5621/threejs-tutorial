@@ -3,7 +3,7 @@ var fs = require('fs');
 
 const PORT = 12345;
 
-fs.readFile('index-animation-learning.html', function(err, html) {
+fs.readFile('src/index-cognite-reveal.html', function(err, html) {
     if (err) throw err;
 
     http.createServer(function(request, response) {
